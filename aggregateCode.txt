@@ -1,0 +1,4 @@
+a = "howdy"
+b="hopeful"
+c="Iknow"
+d="I'm a genius"
