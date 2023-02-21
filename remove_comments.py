@@ -1,4 +1,6 @@
 """ Strip comments and docstrings from a file.
+
+File from  https://gist.github.com/BroHui
 """
 
 import sys, token, tokenize
