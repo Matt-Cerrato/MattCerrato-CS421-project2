@@ -1,9 +1,11 @@
 import os,glob
 from pathlib import Path
-def aggregate():
-    folder_path = './Repos'
+def aggregate(dir_name,output_name):
+    
     fulltext = ''
-    for root, dirs, files in os.walk(folder_path):
+    
+    for root, dirs, files in os.walk(dir_name):
+        print(root)
         for name in files:
             if name.endswith((".py")):
                 with open(os.path.join(root,name), 'r') as f:
@@ -13,13 +15,13 @@ def aggregate():
     fulltext=fulltext[0:len(fulltext)-1]
                 
             
-    with open('aggregateCode.txt','w') as aggregateFile:
+    with open(output_name,'w') as aggregateFile:
         aggregateFile.write(fulltext)
     
 
 
 def main():
-    aggregate()
+    aggregate('.Repos','test.txt')
 
 if __name__ == "__main__":
     main()
